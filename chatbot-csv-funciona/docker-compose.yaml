@@ -1,0 +1,31 @@
+services:
+  app:
+    build: .
+    container_name: fastapi-app-csv
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - cortex
+    networks:
+      - internal
+
+  cortex:
+    image: menloltd/cortex
+    container_name: cortex_csv
+    ports:
+      - "39281:39281"
+    #command: cortex run llama3.2:1b
+    command: /bin/sh -c "echo 1 | cortex pull llama3.2 && cortex run llama3.2:1b"
+    volumes:
+      - cortex_models:/root/.cache/cortex
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
+
+volumes:
+  cortex_models:
