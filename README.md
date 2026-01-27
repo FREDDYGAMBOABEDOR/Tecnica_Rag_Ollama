@@ -1,0 +1,1 @@
+# Tecnica_Rag_Ollama
