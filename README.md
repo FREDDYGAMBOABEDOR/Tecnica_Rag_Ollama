@@ -18,7 +18,7 @@ En vez de que la IA “invente”, primero **recupera datos reales** y luego res
 - **Python** – Lenguaje principal del proyecto.
 - Documentos locales (PDF, TXT, etc.) como base de conocimiento.
 -  Librerías típicas:
-  - `langchain` o similar (si la usaste)
+  - `langchain` 
   - `faiss` / `chromadb` (si usaste vectores)
   - `sentence-transformers` (para embeddings)
 
